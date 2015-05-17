@@ -222,8 +222,8 @@ var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 // Let's play this game!
-// var host = location.origin.replace(/^http/, 'ws')
-var host = "ws://localhost:5000";
+var host = location.origin.replace(/^http/, 'ws')
+// var host = "ws://localhost:5000";
 var ws = new WebSocket(host);
 var then;
 

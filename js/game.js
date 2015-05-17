@@ -176,7 +176,7 @@ var render = function () {
 				}	
 
 				// Player role is villager
-				if (player.role == "hunter"){
+				if (player.role == "villager"){
 					switch (game.players[key].role){
 						case "hunter":
 							ctx.drawImage(villagerImage, game.players[key].x, game.players[key].y);
@@ -222,15 +222,15 @@ var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 // Let's play this game!
-var host = location.origin.replace(/^http/, 'ws')
-// var host = "ws://localhost:5000";
+// var host = location.origin.replace(/^http/, 'ws')
+var host = "ws://localhost:5000";
 var ws = new WebSocket(host);
 var then;
 
 ws.onopen = function() {
 	setInterval(function(){
 		ws.send(JSON.stringify(player));
-	}, 100);
+	}, 0);
 	then = Date.now();
 	reset();
 	main();

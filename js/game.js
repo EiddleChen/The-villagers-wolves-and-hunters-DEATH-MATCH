@@ -230,7 +230,7 @@ var then;
 ws.onopen = function() {
 	setInterval(function(){
 		ws.send(JSON.stringify(player));
-	}, 10);
+	}, 1);
 	then = Date.now();
 	reset();
 	main();
